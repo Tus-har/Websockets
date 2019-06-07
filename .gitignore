@@ -159,7 +159,7 @@ fabric.propertiesV
 .idea/sonarlint
 
 build/
-public/
+
 dist/
 .idea/
 yarn.lock
