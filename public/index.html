@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+<h3 id="userName">
+
+</h3>
+
+<div>
+    <div id="broadcast" style="overflow: auto ;  ; max-height: 300px"></div>
+    Message : <input type='text' id="msg" name="msg">
+    <button type='submit' id="btn" > Send </button>
+</div>
+
+<h5>Active Users</h5>
+<div id="users">
+</div>
+<h5>Personel Messages</h5>
+<div id="personel">
+</div>
+
+
+</body>
+</html>

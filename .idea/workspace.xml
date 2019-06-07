@@ -214,8 +214,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.main.js" />
       <item itemvalue="Node.js.app.js" />
+      <item itemvalue="Node.js.main.js" />
     </list>
     <recent_temporary>
       <list>
