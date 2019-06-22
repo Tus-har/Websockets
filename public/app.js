@@ -1,8 +1,9 @@
+
 $(document).ready(function() {
 
     const Username = window.prompt("Enter Username") || `New User ${Math.floor(Math.random()*1000)}` ;
     $('#userName').html("UserName : " + Username);
-    const socket = io('localhost:5000',{ query : { username : Username} });
+    const socket = io(window,location.hostname,{ query : { username : Username} });
 
     const btn = $('#btn');
     const broadcast = $('#broadcast');
