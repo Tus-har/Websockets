@@ -13,3 +13,4 @@ Languages used:
 Framework used:
 Nestjs
 Expressjs
+Socket.io
