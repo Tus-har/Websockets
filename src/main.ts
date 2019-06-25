@@ -8,5 +8,6 @@ async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(ChatModule);
     app.useStaticAssets(join(__dirname, '..', 'public'));
     await app.listen(port);
+    console.log(`Server listning at port ${port}`);
 }
-bootstrap();
+bootstrap()
