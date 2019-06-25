@@ -13,13 +13,16 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
     users: User[] = [];
 
     async handleConnection(client: Socket) {
-        this.users.push({username : client.handshake.query.username, socketID : client.id}) ;
-        this.server.emit('UpdateUser',this.users);
+        const user: User = {username : client.handshake.query.username, socketID : client.id} ;
+        console.log(user,"handle connection");
+        this.users.push(user) ;
+        this.server.to(client).emit('UserSnapshot',this.users);
+        client.broadcast.emit('UserUpdateAdd',user) ;
     }
     async handleDisconnect(client : Socket){
         const index=this.users.findIndex( (user) => user.socketID ===client.id) ;
+        this.server.emit('UpdateUserRemove',this.users[index]);
         this.users.splice(index,1);
-        this.server.emit('UpdateUser', this.users);
     }
 
     @SubscribeMessage('broadcastMessage')
